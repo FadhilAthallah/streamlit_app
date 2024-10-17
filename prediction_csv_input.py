@@ -23,6 +23,11 @@ def select_rows_by_index(df):
             st.success(f"Row {add_row_by_index} added")
         else:
             st.warning(f"Row {add_row_by_index} is already added.")
+    
+    # Button to add all rows
+    if st.button("Add All Rows"):
+        st.session_state['selected_rows'] = list(df.index)
+        st.success("All rows added")
 
     if len(st.session_state['selected_rows']) > 0:
         # Display the DataFrame with the selected rows
@@ -53,9 +58,9 @@ def predict_from_csv():
         # Read and display the CSV data
     df = pd.read_csv('cek.csv')
     df['trb102'] = df['trb102'].astype(str)
+    st.dataframe(df)
+
     df = select_rows_by_index(df)
-    st.write("Data Loaded:")
-    st.dataframe(df)  # Show a preview of the data
 
     # Store the DataFrame in session state
     st.session_state['df'] = df
@@ -110,7 +115,7 @@ def predict_from_csv():
 
             # Display the predictions
             st.write("Data with Predictions:")
-            st.dataframe(df)  # Show the predictions in the DataFrame
+            st.dataframe(df[['trb102','rtdate','Predictions']])  # Show the predictions in the DataFrame
 
             model = dict1.named_steps['model']
             preprocessor = dict1.named_steps['preprocessor']
