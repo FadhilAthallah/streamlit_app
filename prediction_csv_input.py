@@ -128,15 +128,15 @@ def predict_from_csv():
                 shap_df[f"{feature}_value"] = df_final[feature].values
 
             # Function to get top N influential features for a row
-            def get_top_features(row, n=2):
+            def get_top_features(row, n=3):
                 feature_importances = [(feature, abs(value)) for feature, value in row.items() if not feature.endswith('_value') and feature not in ['prediction', 'true_label']]
                 top_features = sorted(feature_importances, key=lambda x: x[1], reverse=True)[:n]
                 return ', '.join([f"{feature} ({value:.4f})" for feature, value in top_features])
 
             # Add a column with top 5 influential features
-            shap_df['top_5_features'] = shap_df.apply(get_top_features, axis=1)
+            shap_df['top_3_features'] = shap_df.apply(get_top_features, axis=1)
 
-            st.dataframe(shap_df['top_5_features'])
+            st.dataframe(shap_df['top_3_features'])
 
             # Add SHAP values to the DataFrame (for example, the sum of SHAP values per row)
             # df['SHAP_sum'] = shap_values.sum(axis=1)
