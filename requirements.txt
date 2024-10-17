@@ -5,3 +5,4 @@ joblib
 scikit-learn
 shap
 category_encoders
+xgboost
