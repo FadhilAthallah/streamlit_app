@@ -142,7 +142,7 @@ def predict_from_csv():
             # df['SHAP_sum'] = shap_values.sum(axis=1)
 
             # Display SHAP values for each row in the DataFrame
-            st.write("Data with SHAP Values:")
+            # st.write("Data with SHAP Values:")
             # st.dataframe(df[['Predictions', 'SHAP_sum']])
 
             # Create a summary plot
