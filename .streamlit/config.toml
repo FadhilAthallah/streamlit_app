@@ -1,0 +1,6 @@
+[theme]
+primaryColor = "#d2b48c"  # Change this to your desired primary color
+backgroundColor = ""#d2b48c"  # Change this to your desired background color
+secondaryBackgroundColor = "#d2b48c"  # Change this for the sidebar background
+textColor = "#000000"  # Change this for text color
+font = "sans serif"  # Available options: 'serif', 'sans serif', 'monospace'
