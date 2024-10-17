@@ -1,9 +1,9 @@
-streamlit
-pandas
 numpy
+pandas
+scikit-learn
+streamlit
 joblib
-scikit-learn==1.0.2
 shap
 category_encoders
 xgboost
-setuptools
+setuptools>=65.5.0
