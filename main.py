@@ -1,5 +1,5 @@
 import streamlit as st
-# from prediction_user_input import prediction_user_input
+from prediction_user_input import prediction_user_input
 import streamlit as st
 import numpy as np
 import pandas as pd
